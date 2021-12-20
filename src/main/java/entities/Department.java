@@ -1,17 +1,28 @@
 package entities;
 
 import java.util.Random;
-import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * Class describing an entity Department
+ * @see Human
+ */
 public class Department {
     private int ID;
     private String title;
-    //private static AtomicInteger idCounter;
 
+
+    /**
+     * Default constructor
+     */
     public Department() {
         this.ID = 0;
         this.title = "";
     }
+
+    /**
+     * Constructor with parameters
+     * @param title - title of Department
+     */
     public Department(String title){
         this.ID = createID();
         this.title = title;

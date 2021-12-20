@@ -1,5 +1,9 @@
 package entities;
 
+/**
+ * Class describing an entity Human
+ * @see Department
+ */
 public class Human {
     private int ID;
     private String name;
@@ -8,6 +12,9 @@ public class Human {
     private int salary;
     private String birthday;
 
+    /**
+     * Default constructor
+     */
     public Human() {
         this.ID = 0;
         this.name = "";
@@ -17,6 +24,9 @@ public class Human {
         this.birthday = null;
     }
 
+    /**
+     * Constructor with parameters
+     */
     public Human(int ID, String name, String gender, Department department, int salary, String birthday) {
         this.ID = ID;
         this.name = name;

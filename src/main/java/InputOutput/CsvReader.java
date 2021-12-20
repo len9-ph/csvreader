@@ -11,10 +11,14 @@ import entities.Human;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Class which is implement methods for reading data from CSV-file and printing it
+ * @see Department
+ * @see Human
+ */
 public class CsvReader {
     private List<Human> humans;
 
@@ -30,6 +34,13 @@ public class CsvReader {
         this.humans = humans;
     }
 
+    /**
+     * Method for reading data from CSV - file
+     * @param pathToCSV - path to CSV - file
+     * @param separator - character which separate lines
+     * @throws IOException
+     * @throws CsvValidationException
+     */
     public void readCSV(String pathToCSV, char separator) {
         try(FileReader in = new FileReader(pathToCSV)) {
             CSVParser parser = new CSVParserBuilder().withSeparator(separator).build();
@@ -47,6 +58,9 @@ public class CsvReader {
         }
     }
 
+    /**
+     * Method for printing data
+     */
     public void printCSV() {
         for (Human human : humans) {
             System.out.println(human.toString());
